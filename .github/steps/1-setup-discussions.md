@@ -6,18 +6,16 @@
   Encourage users to open new tabs for steps!
 -->
 
-## Step 1: Open a pull request
+## Step 1: Set up GitHub Discussions
 
-_Welcome to "Review pull requests"! :wave:_
+Before you can start collaborating with Discussions, you need to enable the feature.
 
-Let's get started by opening a pull request.
+### :gear: Activity
 
-**What is a pull request?**: Collaboration happens on a pull request. The pull request shows the changes in your branch to other people. This pull request is going to keep the changes you just made on your branch and propose applying them to the `main` branch.
-
-### :keyboard: Activity: Create a pull request
-
-1. Create a branch called `enable-discussions`.
-2. Make a small change (like editing this README).
-3. Push the branch to GitHub.
-4. Open a pull request from `enable-discussions` to `main`.
+1. Go to the **Settings** tab of this repo.
+2. Scroll to **Features** under “Code and automation.”
+3. ✅ Check the box for **Discussions**.
+4. Create a branch called `enable-discussions`.
+5. Make any small change (like editing this README).
+6. Push the branch and open a pull request from `enable-discussions` to `main`.
 
