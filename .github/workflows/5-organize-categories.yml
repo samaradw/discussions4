@@ -6,10 +6,8 @@ name: Step 5, Apply changes
 # This will run every time we push to the `update-game branch`.
 # Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - update-game
+  discussion:
+    types: [edited]
 
 # Reference: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
@@ -41,8 +39,7 @@ jobs:
     # Reference: https://docs.github.com/en/actions/learn-github-actions/contexts
     # Reference: https://docs.github.com/en/actions/learn-github-actions/expressions
     if: >-
-      ${{ !github.event.repository.is_template
-          && needs.get_current_step.outputs.current_step == 5 }}
+      ${{ needs.get_current_step.outputs.current_step == 5 }}
 
     # We'll run Ubuntu for performance instead of Mac or Windows.
     runs-on: ubuntu-latest
