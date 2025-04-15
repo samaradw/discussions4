@@ -1,4 +1,4 @@
-name: Step 5, Apply changes
+name: Step 5, Organize with Categories
 
 # This step triggers after the user applies the pull request suggested change.
 # This workflow updates from step 5 to step 6.
@@ -29,8 +29,8 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
-  on_apply_suggested_change:
-    name: On apply suggested change
+  on_category_edit:
+    name: Proceed to Finish
     needs: get_current_step
 
     # We will only run this action when:
@@ -44,19 +44,14 @@ jobs:
     # We'll run Ubuntu for performance instead of Mac or Windows.
     runs-on: ubuntu-latest
 
-    steps:
-      # We'll need to check out the repository so that we can edit the README.
+   steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Let's get all the branches.
-          ref: update-game
-
-      # In README.md, switch step 5 for step 6.
-      - name: Update to step 6
+        
+      - name: Update to finish
         uses: skills/action-update-step@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 5
           to_step: 6
-          branch_name: update-game
+          branch_name: main
