@@ -1,4 +1,4 @@
-name: Step 2, Assign yourself
+name: Step 2, Create Discussion
 
 # This step triggers after the user assigns themselves as a pull request reviewer.
 # This workflow updates from step 2 to step 3.
@@ -29,8 +29,8 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
-  on_assigned_reviewer:
-    name: On assigned reviewer
+   on_created:
+    name: Proceed to Step 3
     needs: get_current_step
 
     # We will only run this action when:
@@ -45,20 +45,14 @@ jobs:
 
     # We'll run Ubuntu for performance instead of Mac or Windows.
     runs-on: ubuntu-latest
-
+  
     steps:
-      # We'll need to check out the repository so that we can edit the README.
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Let's get all the branches.
-          ref: update-game
-
-      # In README.md, switch step 2 for step 3.
       - name: Update to step 3
         uses: skills/action-update-step@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 2
           to_step: 3
-          branch_name: update-game
+          branch_name: main
