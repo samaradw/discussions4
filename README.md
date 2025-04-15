@@ -2,44 +2,34 @@
 
 <!--
   <<< Author notes: Course header >>>
-  Include a 1280×640 image, course title in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Add your open source license, GitHub uses MIT license.
+  Update the course title and description.
 -->
 
-# Review pull requests
+# Creating & organizing discussions
 
-_Collaborate and work together on GitHub._
+_Learn how to use GitHub Discussions to foster better collaboration._
 
 </header>
 
 <!--
   <<< Author notes: Step 1 >>>
-  Choose 3-5 steps for your course.
-  The first step is always the hardest, so pick something easy!
-  Link to docs.github.com for further explanations.
-  Encourage users to open new tabs for steps!
 -->
 
-## Step 1: Open a pull request
+## Step 1: Set up GitHub Discussions
 
-_Welcome to "Review pull requests"! :wave:_
+Welcome to “Creating & Organizing Discussions”! 👋
 
-Let's get started by opening a pull request.
+Let’s get started by enabling GitHub Discussions.
 
-**What is a pull request?**: Collaboration happens on a pull request. The pull request shows the changes in your branch to other people. This pull request is going to keep the changes you just made on your branch and propose applying them to the `main` branch.
+### :gear: Activity: Enable Discussions
 
-### :keyboard: Activity: Create a pull request
+1. Go to the **Settings** tab of this repository.
+2. Under **Features**, check the box for **Discussions**.
+3. Create a branch named `enable-discussions`.
+4. Make a small edit to this README and push the branch.
+5. Open a pull request from `enable-discussions` to `main`.
 
-1. Click on the **Pull requests** tab in your repository.
-2. Click **New pull request**.
-3. In the **base:** dropdown, make sure **main** is selected.
-4. Select the **compare:** dropdown, and click `update-game`.
-5. Click **Create pull request**.
-6. Enter a title for your pull request: `Update the game over message`.
-7. Enter a description for your pull request: `Update the game over message so people know how to play again!`
-8. Click **Create pull request**.
-9. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
+Once you do this, GitHub Actions will automatically move you to Step 2. ✨
 
 <footer>
 
