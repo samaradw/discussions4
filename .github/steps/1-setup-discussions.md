@@ -16,12 +16,8 @@ Let's get started by opening a pull request.
 
 ### :keyboard: Activity: Create a pull request
 
-1. Click on the **Pull requests** tab in your repository.
-2. Click **New pull request**.
-3. In the **base:** dropdown, make sure **main** is selected.
-4. Select the **compare:** dropdown, and click `update-game`.
-5. Click **Create pull request**.
-6. Enter a title for your pull request: `Update the game over message`.
-7. Enter a description for your pull request: `Update the game over message so people know how to play again!`
-8. Click **Create pull request**.
-9. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
+1. Create a branch called `enable-discussions`.
+2. Make a small change (like editing this README).
+3. Push the branch to GitHub.
+4. Open a pull request from `enable-discussions` to `main`.
+
