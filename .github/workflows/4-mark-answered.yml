@@ -1,4 +1,4 @@
-name: Step 4, Suggest changes
+name: Step 4, Mark as Answered
 
 # This step triggers after the user leaves a review comment.
 # This workflow updates from step 4 to step 5.
@@ -29,8 +29,8 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
-  on_review_comment:
-    name: On review comment
+  on_answered:
+    name: Proceed to Step 5
     needs: get_current_step
 
     # We will only run this action when:
@@ -45,17 +45,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # We'll need to check out the repository so that we can edit the README.
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Let's get all the branches.
-          ref: update-game
-
-      # In README.md, switch step 4 for step 5.
       - name: Update to step 5
         uses: skills/action-update-step@v2
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          from_step: 4
+          to_step: 5
+          branch_name: main
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 4
           to_step: 5
