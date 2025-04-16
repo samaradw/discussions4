@@ -54,7 +54,3 @@ jobs:
           from_step: 4
           to_step: 5
           branch_name: main
-          token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 4
-          to_step: 5
-          branch_name: update-game
