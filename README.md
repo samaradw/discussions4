@@ -5,7 +5,7 @@
   Update the course title and description.
 -->
 
-# Creating & organizing discussions
+# Creating & organizing discussions  
 
 _Learn how to use GitHub Discussions to foster better collaboration._
 
