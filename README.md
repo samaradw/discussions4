@@ -17,7 +17,7 @@ _Learn how to use GitHub Discussions to foster better collaboration._
   Define terms and link to docs.github.com.
 -->
 
-## Step 1: Set up GitHub Discussions
+## Step 1: Set up GitHub Discussions  
 
 Let’s get started by enabling GitHub Discussions.
 
