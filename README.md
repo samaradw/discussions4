@@ -21,7 +21,7 @@ _Learn how to use GitHub Discussions to foster better collaboration._
 
 Let’s get started by enabling GitHub Discussions.
 
-### ⚙️ Activity: Enable Discussions
+### ⚙️ Activity: Enable Discussions  
 
 1. Go to the **Settings** tab of this repository.
 2. Under **Features**, check the box for **Discussions**.
