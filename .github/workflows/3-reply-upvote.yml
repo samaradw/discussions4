@@ -1,5 +1,8 @@
 name: Step 3, Reply to a Discussion
 
+# This step triggers when the learner creates a reply to any discussion.
+# This workflow updates from step 3 to step 4.
+
 on:
   discussion_comment:
     types: [created]
@@ -27,7 +30,8 @@ jobs:
     needs: get_current_step
 
     if: >-
-      ${{ needs.get_current_step.outputs.current_step == 3 }}
+      ${{ needs.get_current_step.outputs.current_step == 3 &&
+          github.event_name == 'discussion_comment' }}
 
     runs-on: ubuntu-latest
     steps:
