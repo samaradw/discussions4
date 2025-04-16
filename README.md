@@ -17,7 +17,7 @@ _Learn how to use GitHub Discussions to foster better collaboration._
 
 ## Step 1: Set up GitHub Discussions
 
-Welcome to “Creating & Organizing Discussions”! 👋
+Welcome to “Creating & Organizing Discussions”! 👋 
 
 Let’s get started by enabling GitHub Discussions.
 
