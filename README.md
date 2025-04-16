@@ -12,20 +12,21 @@ _Learn how to use GitHub Discussions to foster better collaboration._
 </header>
 
 <!--
-  <<< Author notes: Step 5 >>>
+  <<< Author notes: Step 2 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
+  Historic note: this step combines the commend, approve, and needs changes steps from the previous version.
 -->
 
-## Step 1: Set up GitHub Discussions
+## Step 2: Create a Discussion
 
-Before you can start collaborating with Discussions, you need to enable the feature.
+Let’s get a conversation started!
 
-### :gear: Activity
+### 💬 Activity
 
-1. Go to the **Settings** tab of this repo.
-2. Scroll to **Features** under “Code and automation.”
-3. ✅ Check the box for **Discussions**.
-4. Create a branch called `enable-discussions`.
-5. Make any small change (like editing this README).
-6. Push the branch and open a pull request from `enable-discussions` to `main`.
+1. Click the **Discussions** tab.
+2. Click **New Discussion**.
+3. Choose the **Q&A** or **Ideas** category.
+4. Post a title and body, then click **Start Discussion**.
+
+
