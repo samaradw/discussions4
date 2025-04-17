@@ -12,25 +12,31 @@ _Learn how to use GitHub Discussions to foster better collaboration._
 </header>
 
 <!--
-  <<< Author notes: Step 4 >>>
+  <<< Author notes: Step 5 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
 -->
 
-## Step 4: Mark as Answered
+## Step 5: Organize with Categories
 
-Keep things clear by highlighting useful replies.
+Time to clean things up!
 
-### ✅ Activity
+### 🗂️ Activity
 
-1. Go to the discussion you created.
-2. Find a reply that answers your question.
-3. Click **✔️ Mark as answer**.
+Option A:  
+1. Go to a discussion you created.
+2. Click **Edit**.
+3. Change the category to something else (e.g. from “Q&A” to “Ideas”).
 
+Option B (if admin):  
+1. Go to **Settings > Discussions**.
+2. Add a new category.
+
+Either action will complete this step!
 ---
 
 ## 💡 Why This Matters
 
-Marking an answer keeps the thread clear and focused. It shows appreciation to the responder and reduces repeat questions by pointing others to the accepted solution. It's a key moderation feature for any active repository.
+Proper categorization keeps your discussions easy to browse and reduces clutter. Just like GitHub Issues benefit from labels, Discussions benefit from clear categories. They’re critical for larger teams or public repositories.
 
 
