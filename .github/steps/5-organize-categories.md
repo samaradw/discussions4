@@ -20,3 +20,8 @@ Option B (if admin):
 2. Add a new category.
 
 Either action will complete this step!
+---
+
+## 💡 Why This Matters
+
+Proper categorization keeps your discussions easy to browse and reduces clutter. Just like GitHub Issues benefit from labels, Discussions benefit from clear categories. They’re critical for larger teams or public repositories.
