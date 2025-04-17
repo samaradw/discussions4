@@ -15,3 +15,9 @@ Let’s get a conversation started!
 2. Click **New Discussion**.
 3. Choose the **Q&A** or **Ideas** category.
 4. Post a title and body, then click **Start Discussion**.
+
+---
+
+## 💡 Why This Matters
+
+Starting a discussion helps define the tone and structure of collaboration in your repo. Whether you're asking for input, sharing goals, or posing a challenge, a well-written discussion encourages others to engage and contribute meaningfully.
