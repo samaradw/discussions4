@@ -17,26 +17,31 @@ _Learn how to use GitHub Discussions to foster better collaboration._
   Define terms and link to docs.github.com.
 -->
 
-## Step 5: Organize with Categories
+## Step 1: Set Up GitHub Discussions
 
-Time to clean things up!
+To get started, you'll enable GitHub Discussions in your repository settings and open your first pull request.
 
-### 🗂️ Activity
-
-Option A:  
-1. Go to a discussion you created.
-2. Click **Edit**.
-3. Change the category to something else (e.g. from “Q&A” to “Ideas”).
-
-Option B (if admin):  
-1. Go to **Settings > Discussions**.
-2. Add a new category.
-
-Either action will complete this step!
 ---
 
-## 💡 Why This Matters
+### ⚙️ Task: Enable Discussions
 
-Proper categorization keeps your discussions easy to browse and reduces clutter. Just like GitHub Issues benefit from labels, Discussions benefit from clear categories. They’re critical for larger teams or public repositories.
+1. Go to the **Settings** tab of this repository.
+2. Under **Features**, check the box for ✅ **Discussions**.
+3. Create a new branch named `enable-discussions`.
+4. Make a small edit to this README (like adding an emoji! 🎉).
+5. Push the branch.
+6. Open a pull request from `enable-discussions` → `main`.
 
+Once completed, GitHub Actions will automatically advance you to Step 2. 🎯
 
+---
+
+### 💡 Why This Matters
+
+Enabling GitHub Discussions sets the foundation for team-wide or community-wide collaboration. It’s especially useful for:
+
+- Collecting feedback before code is written
+- Supporting Q&A from users or contributors
+- Hosting brainstorming sessions within context of the repo
+
+Setting this up now ensures you can create and use discussions for future steps in this tutorial.
