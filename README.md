@@ -7,7 +7,7 @@
 
 # Creating & organizing discussions  
 
-_Learn how to use GitHub Discussions to foster better collaboration._
+_Learn how to use GitHub Discussions to foster better collaboration._    
 
 </header>
 
