@@ -12,26 +12,25 @@ _Learn how to use GitHub Discussions to foster better collaboration._
 </header>
 
 <!--
-  <<< Author notes: Step 3 >>>
+  <<< Author notes: Step 4 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
-  Historic note: this step combines the commend, approve, and needs changes steps from the previous version.
 -->
 
-## Step 3: Reply and Upvote
+## Step 4: Mark as Answered
 
-Let’s engage with others!
+Keep things clear by highlighting useful replies.
 
-### 🤝 Activity
+### ✅ Activity
 
-1. Go to any discussion.
-2. Leave a thoughtful comment or answer.
-3. React to a comment (preferably 👍).
+1. Go to the discussion you created.
+2. Find a reply that answers your question.
+3. Click **✔️ Mark as answer**.
 
 ---
 
 ## 💡 Why This Matters
 
-Replies and reactions signal active engagement and can help prioritize what ideas or questions deserve attention. Upvoting key replies brings clarity to large threads and makes your project’s direction more transparent.
+Marking an answer keeps the thread clear and focused. It shows appreciation to the responder and reduces repeat questions by pointing others to the accepted solution. It's a key moderation feature for any active repository.
 
 
