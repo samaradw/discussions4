@@ -29,3 +29,9 @@ Before you can start collaborating with Discussions, you need to enable the feat
 4. Create a branch called `enable-discussions`.
 5. Make any small change (like editing this README).
 6. Push the branch and open a pull request from `enable-discussions` to `main`.
+
+---
+
+## 💡 Why This Matters
+
+Discussions create a space for asynchronous collaboration. Whether you're leading a project, contributing to open source, or managing stakeholders, enabling Discussions provides a structured and inclusive way to surface ideas and communicate across time zones.
