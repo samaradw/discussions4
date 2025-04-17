@@ -19,7 +19,7 @@ _Learn how to use GitHub Discussions to foster better collaboration._
 
 ## Step 1: Set Up GitHub Discussions
 
-To get started, you'll enable GitHub Discussions in your repository settings and open your first pull request.
+To get started, you'll enable GitHub Discussions in your repository settings and open your first pull request.  
 
 ---
 
