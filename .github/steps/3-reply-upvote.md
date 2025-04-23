@@ -5,18 +5,16 @@
   Historic note: this step combines the commend, approve, and needs changes steps from the previous version.
 -->
 
-## Step 3: Reply and Upvote
+# 📍 Step 3: Pin a Reply in a Discussion
 
-Let’s engage with others!
+You’ve pinned the whole thread—great! Now let’s spotlight a specific comment that adds value to the conversation.
 
-### 🤝 Activity
+## ✨ Why this matters
+Replies often contain solutions or clarifications. Marking a reply as the answer pins it, making it easier for others to find helpful content quickly.
 
-1. Go to any discussion.
-2. Leave a thoughtful comment or answer.
-3. React to a comment (preferably 👍).
+## ✅ What to do
+1. Scroll through the replies in your discussion.
+2. Find the reply that’s the most helpful.
+3. Click the **checkmark icon** next to it to **“Mark as answer.”**
 
----
-
-## 💡 Why This Matters
-
-Replies and reactions signal active engagement and can help prioritize what ideas or questions deserve attention. Upvoting key replies brings clarity to large threads and makes your project’s direction more transparent.
+Once you've marked a reply as the answer, the bot will automatically move you to the final step.
