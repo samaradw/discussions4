@@ -3,32 +3,22 @@
   Review what we learned, ask for feedback, provide next steps.
 -->
 
-## 🎉 You’ve completed Creating & Organizing Discussions!
+## Finish
 
-You now know how to:
-- Enable GitHub Discussions
-- Start and engage in meaningful threads
-- Mark answers
-- Organize with categories
+_Congratulations on completing this course on an introduction to Discussions!_
 
-👏 Great job! Try enabling Discussions on your real project!
+<img src="https://octodex.github.com/images/securitocat.png" alt="celebrate" width="300" align="right">
 
----
+By mastering GitHub Discussions, you’ve learned how to:
+- Enable Discussions on a repository
+- Start and participate in meaningful threads
+- Organize conversations with custom categories
 
-## 💡 Why This Skill Matters
+### What's next?
 
-Discussions promote transparency, community involvement, and decision-making within your repository. Whether you’re leading a project, teaching, or managing feedback, GitHub Discussions help turn your repository into a collaborative workspace.
-
----
-
-## 🔗 Real-World Inspiration
-
-- [VS Code’s GitHub Discussions](https://github.com/microsoft/vscode/discussions) is used for product ideas, feedback, and feature requests.
-- [GitHub Docs](https://github.com/github/docs/discussions) leverages Q&A and Ideas to improve open documentation collaboratively.
-
----
-
-💬 Try using Discussions on your own projects.  
-🧑‍🏫 Or onboard your team with this tutorial!
-
-Want to try another GitHub Skill? [Browse Skills here →](https://github.com/skills)
+- Enable Discussions in your real-world repositories to foster better collaboration
+- Use categories to separate Q&A, Ideas, and Announcements effectively
+- Promote transparency by encouraging open dialogue and shared decision-making
+- [Tell us what you thought of this course in our discussion board](https://github.com/orgs/skills/discussions)
+- [Explore more GitHub Skills courses](https://github.com/skills)
+- [Learn more about GitHub Discussions](https://docs.github.com/en/discussions)
