@@ -16,5 +16,4 @@ Pinning helps ensure that high-value Discussions—like announcements or key dec
 1. Open your Discussion titled `Skill Practice: Pinning Discussions`.
 2. Click the **three-dot menu (⋯)** in the top-right corner of the post.
 3. Select **Pin**.
-
-Once pinned, the bot will recognize your action and move you to the next step.
+4. Wait about 20 seconds then refresh this page (the one you're following instructions from) to automatically update to the next step.
