@@ -8,7 +8,7 @@
 
 Time to clean things up!
 
-### 🗂️ Activity
+### :keyboard: Activity: Organize your Discussion with categories
 
 Option A:  
 1. Go to a Discussion you created.
