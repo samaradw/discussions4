@@ -17,7 +17,7 @@ You now know how to:
 
 ## 💡 Why This Skill Matters
 
-Discussions promote transparency, community involvement, and decision-making within your repository. Whether you’re leading a project, teaching, or managing feedback, GitHub Discussions help turn your repo into a collaborative workspace.
+Discussions promote transparency, community involvement, and decision-making within your repository. Whether you’re leading a project, teaching, or managing feedback, GitHub Discussions help turn your repository into a collaborative workspace.
 
 ---
 
