@@ -8,7 +8,7 @@
 
 Keep things clear by highlighting useful replies.
 
-### ✅ Activity
+### :keyboard: Activity: Mark a correct answer
 
 1. Go to the Discussion you created.
 2. Find a reply that answers your question.
