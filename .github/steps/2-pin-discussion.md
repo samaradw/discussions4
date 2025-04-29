@@ -5,7 +5,7 @@
   Historic note: this step combines the commend, approve, and needs changes steps from the previous version.
 -->
 
-# 📌 Step 2: Pin a Discussion Thread
+# 📌 Step 2: Pin a Discussion thread
 
 Now that you’ve created a discussion, it’s time to highlight it by pinning it to the top of your Discussions tab.
 
