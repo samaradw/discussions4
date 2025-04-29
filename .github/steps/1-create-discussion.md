@@ -20,5 +20,4 @@ Creating a Discussion gives your team a shared space to communicate asynchronous
 4. Choose a category like **General** (or whatever is available).
 5. Add a short message, such as:
    > Practicing how to create and pin GitHub Discussions!
-
-Once you've created the Discussion, the bot will detect it and guide you to the next step!
+6. Wait about 20 seconds then refresh this page (the one you're following instructions from) to automatically update to the next step.
