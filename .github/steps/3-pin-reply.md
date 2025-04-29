@@ -5,7 +5,7 @@
   Historic note: this step combines the commend, approve, and needs changes steps from the previous version.
 -->
 
-##📍 Step 3: Pin a reply in a Discussion
+## 📍 Step 3: Pin a reply in a Discussion
 
 You’ve pinned the whole thread—great! Now let’s spotlight a specific comment that adds value to the conversation.
 
