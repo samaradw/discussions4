@@ -4,7 +4,7 @@
   Define terms and link to docs.github.com.
 -->
 
-## Step 5: Organize with categories
+## Step 4: Organize with categories
 
 Time to clean things up!
 
