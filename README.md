@@ -1,39 +1,47 @@
 <header>
 
-<!--
-  <<< Author notes: Course header >>>
-  Update the course title and description.
--->
+# 💬 Introduction to Discussions
 
-# Creating & organizing discussions  
-
-_Learn how to use GitHub Discussions to foster better collaboration._
+_Learn how to enable, organize, and engage with GitHub Discussions._
 
 </header>
 
-<!--
-  <<< Author notes: Step 1 >>>
-  Choose 3-5 steps for your course.
-  The first step is always the hardest, so pick something easy!
-  Link to docs.github.com for further explanations.
-  Encourage users to open new tabs for steps!
--->
+---
 
-# 📋 Step 1: Create a Discussion
+## Welcome
 
-Discussions are a great way to share updates, ask questions, or document decisions with your team. In this step, you'll create a GitHub Discussion to serve as the foundation for practicing pinning.
+GitHub Discussions creates a space where your community can ask questions, share ideas, and collaborate in an open, organized way. By enabling Discussions, you turn your repository into a vibrant workspace where collaboration happens transparently. In this course, you'll practice setting up Discussions and managing conversations effectively.
 
-## ✨ Why this matters
-Creating a discussion gives your team a shared space to communicate asynchronously and transparently. Pinning starts with creating something worth highlighting.
+- **Who is this for**: Project maintainers, open source contributors, community managers, instructors, new GitHub users.
+- **What you'll learn**: How to enable Discussions, how to create and reply to threads, how to mark answers, how to organize with categories.
+- **What you'll build**: A Discussions space that's structured to encourage questions, ideas, and solutions.
+- **Prerequisites**: Basic familiarity with GitHub. We recommend taking [Introduction to GitHub](https://github.com/skills/introduction-to-github) first if you're brand new.
+- **How long**: About 15–20 minutes to complete.
 
-## ✅ What to do
-1. Go to the **Discussions** tab in your newly created repository.
-2. Click **“New discussion.”**
-3. Use this title: `Skill Practice: Pinning Discussions`
-4. Choose a category like **General** (or whatever is available).
-5. Add a short message, such as:
-   > Practicing how to create and pin GitHub Discussions!
+In this course, you will:
 
-Once you've created the discussion, the bot will detect it and guide you to the next step!
+1. Enable GitHub Discussions
+2. Start and engage in a new thread
+3. Mark an answer in a Q&A discussion
+4. Organize discussions into categories
 
+---
 
+### 🚀 How to start this course
+
+[![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=samaradw&template_name=pin7&owner=%40me&name=samaradw-pin7&description=My+clone+repository&visibility=public)
+
+1. Right-click **Start course** and open the link in a new tab.
+2. Fill out the form to create your own copy of the course repository.
+   - For owner, choose your personal account or organization.
+   - Public repositories are recommended, as private ones will [consume GitHub Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
+3. Click **Create repository** and wait about 20 seconds.
+4. Refresh the page and follow the instructions in your new repository.
+
+<footer>
+
+---
+
+Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/intro-to-discussions) • [Review the GitHub status page](https://www.githubstatus.com/)
+
+</footer>
