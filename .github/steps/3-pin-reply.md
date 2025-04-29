@@ -15,6 +15,6 @@ Replies often contain solutions or clarifications. Marking a reply as the answer
 ## ✅ What to do
 1. Scroll through the replies in your Discussion.
 2. Find the reply that’s the most helpful.
-3. Click the **checkmark icon** next to it to **“Mark as answer.”**
+3. Click the **checkmark icon** next to it to **Mark as answer.**
 
 Once you've marked a reply as the answer, the bot will automatically move you to the final step.
