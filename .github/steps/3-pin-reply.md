@@ -9,10 +9,10 @@
 
 You’ve pinned the whole thread—great! Now let’s spotlight a specific comment that adds value to the conversation.
 
-## ✨ Why this matters
+### ✨ Why this matters
 Replies often contain solutions or clarifications. Marking a reply as the answer pins it, making it easier for others to find helpful content quickly.
 
-## ✅ What to do
+### :keyboard: Activity: Pin a reply in your Discussion
 1. Scroll through the replies in your Discussion.
 2. Find the reply that’s the most helpful.
 3. Click the **checkmark icon** next to it to **Mark as answer.**
