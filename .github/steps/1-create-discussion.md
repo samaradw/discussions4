@@ -6,7 +6,7 @@
   Encourage users to open new tabs for steps!
 -->
 
-# 📋 Step 1: Create a Discussion
+## 📋 Step 1: Create a Discussion
 
 Discussions are a great way to share updates, ask questions, or document decisions with your team. In this step, you'll create a GitHub Discussion to serve as the foundation for practicing pinning.
 
