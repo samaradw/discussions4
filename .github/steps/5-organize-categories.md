@@ -14,6 +14,7 @@ Option A:
 1. Go to a Discussion you created.
 2. Click **Edit**.
 3. Change the category to something else (e.g. from “Q&A” to “Ideas”).
+4. Wait about 20 seconds then refresh this page (the one you're following instructions from) to automatically update to the next step.
 
 Option B (if admin):  
 1. Go to **Settings > Discussions**.
