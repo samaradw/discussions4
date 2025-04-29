@@ -10,7 +10,7 @@
 
 Discussions are a great way to share updates, ask questions, or document decisions with your team. In this step, you'll create a GitHub Discussion to serve as the foundation for practicing pinning.
 
-## ✨ Why this matters
+### ✨ Why this matters
 Creating a Discussion gives your team a shared space to communicate asynchronously and transparently. Pinning starts with creating something worth highlighting.
 
 ### :keyboard: Activity: Create a new Discussion
