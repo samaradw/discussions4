@@ -15,7 +15,7 @@ Creating a Discussion gives your team a shared space to communicate asynchronous
 
 ## ✅ What to do
 1. Go to the **Discussions** tab in your newly created repository.
-2. Click **“New Discussion.”**
+2. Click **New Discussion.**
 3. Use this title: `Skill Practice: Pinning Discussions`
 4. Choose a category like **General** (or whatever is available).
 5. Add a short message, such as:
