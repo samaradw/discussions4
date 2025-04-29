@@ -5,7 +5,7 @@
   Historic note: this step combines the commend, approve, and needs changes steps from the previous version.
 -->
 
-# 📍 Step 3: Pin a Reply in a Discussion
+# 📍 Step 3: Pin a reply in a Discussion
 
 You’ve pinned the whole thread—great! Now let’s spotlight a specific comment that adds value to the conversation.
 
@@ -13,7 +13,7 @@ You’ve pinned the whole thread—great! Now let’s spotlight a specific comme
 Replies often contain solutions or clarifications. Marking a reply as the answer pins it, making it easier for others to find helpful content quickly.
 
 ## ✅ What to do
-1. Scroll through the replies in your discussion.
+1. Scroll through the replies in your Discussion.
 2. Find the reply that’s the most helpful.
 3. Click the **checkmark icon** next to it to **“Mark as answer.”**
 
