@@ -13,6 +13,7 @@ Keep things clear by highlighting useful replies.
 1. Go to the Discussion you created.
 2. Find a reply that answers your question.
 3. Click **✔️ Mark as answer**.
+4. Wait about 20 seconds then refresh this page (the one you're following instructions from) to automatically update to the next step.
 
 ---
 
