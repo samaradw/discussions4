@@ -7,7 +7,7 @@
 
 _Congratulations on completing this course on an introduction to Discussions!_
 
-<img src="https://octodex.github.com/images/securitocat.png" alt="celebrate" width="300" align="right">
+<img src=https://octodex.github.com/images/benevocats.jpg alt=celebrate width=300 align=right>
 
 By mastering GitHub Discussions, you’ve learned how to:
 - Enable Discussions on a repository
