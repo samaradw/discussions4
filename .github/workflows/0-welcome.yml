@@ -4,7 +4,9 @@ name: Step 0, Welcome
 # This workflow updates from step 0 to step 1.
 
 on:
-  workflow_dispatch:
+  # Trigger when the repository is created from the template
+  create:
+  # Trigger when a push occurs to the main branch
   push:
     branches:
       - main
@@ -54,14 +56,15 @@ jobs:
           BRANCH=update-intro-discussions
           git checkout -b $BRANCH
 
-          echo "Create a placeholder file for the course"
-          echo "<!-- Welcome to Introduction to Discussions Skill -->" > intro.txt
+          echo "Create the Step 1 README file"
+          echo "# Step 1: Introduction to Discussions" > README.md
+          echo "Welcome to Step 1 of the Introduction to Discussions skill!" >> README.md
 
           echo "Commit the new file"
           git config user.name github-actions[bot]
           git config user.email github-actions[bot]@users.noreply.github.com
-          git add intro.txt
-          git commit --message="Start Introduction to Discussions course"
+          git add README.md
+          git commit --message="Start Step 1: Introduction to Discussions"
 
           echo "Push the branch"
           git push --set-upstream origin $BRANCH
