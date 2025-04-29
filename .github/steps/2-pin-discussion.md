@@ -9,10 +9,10 @@
 
 Now that you’ve created a Discussion, it’s time to highlight it by pinning it to the top of your Discussions tab.
 
-## ✨ Why this matters
+### ✨ Why this matters
 Pinning helps ensure that high-value Discussions—like announcements or key decisions—stay visible to all contributors.
 
-## ✅ What to do
+#### :keyboard: Activity: Pin your Discussion
 1. Open your Discussion titled `Skill Practice: Pinning Discussions`.
 2. Click the **three-dot menu (⋯)** in the top-right corner of the post.
 3. Select **Pin**.
