@@ -13,7 +13,7 @@ Discussions are a great way to share updates, ask questions, or document decisio
 ## ✨ Why this matters
 Creating a Discussion gives your team a shared space to communicate asynchronously and transparently. Pinning starts with creating something worth highlighting.
 
-## ✅ What to do
+### :keyboard: Activity: Create a new Discussion
 1. Go to the **Discussions** tab in your newly created repository.
 2. Click **New Discussion.**
 3. Use this title: `Skill Practice: Pinning Discussions`
