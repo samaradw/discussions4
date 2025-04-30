@@ -4,9 +4,7 @@ name: Step 0, Welcome
 # This workflow updates from step 0 to step 1.
 
 on:
-  # Trigger when the repository is created from the template
-  create:
-  # Trigger when a push occurs to the main branch
+  # Trigger when a push happens to main (which occurs after repo creation from a template)
   push:
     branches:
       - main
@@ -20,16 +18,16 @@ jobs:
     name: Check current step number
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
       - id: get_step
         run: |
-          echo "current_step=$(cat ./.github/steps/-step.txt)" >> $GITHUB_OUTPUT
+          echo "current_step=$(cat .github/steps/-step.txt)" >> $GITHUB_OUTPUT
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
   on_start:
-    name: On start
+    name: Proceed to Step 1
     needs: get_current_step
     if: >-
       ${{ !github.event.repository.is_template
@@ -42,43 +40,41 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Prepare a branch and simple commit
-      - name: Prepare a branch and pull request
+      - name: Prepare branch and update README
         run: |
           echo "Ensure we are on step 0"
           if [ "$(cat .github/steps/-step.txt)" != 0 ]
           then
-            echo "Current step is not 0"
+            echo "Not on step 0 — exiting."
             exit 0
           fi
 
           echo "Create a new branch"
-          BRANCH=update-intro-discussions
+          BRANCH=update-step-1
           git checkout -b $BRANCH
 
-          echo "Create the Step 1 README file"
-          echo "# Step 1: Introduction to Discussions" > README.md
-          echo "Welcome to Step 1 of the Introduction to Discussions skill!" >> README.md
+          echo "Trigger step 1 README"
+          sed -i.bak 's/Step 0/Step 1/' README.md || true
 
-          echo "Commit the new file"
+          echo "Make commit"
           git config user.name github-actions[bot]
           git config user.email github-actions[bot]@users.noreply.github.com
           git add README.md
-          git commit --message="Start Step 1: Introduction to Discussions"
+          git commit -m "Progress to Step 1"
 
-          echo "Push the branch"
+          echo "Push branch"
           git push --set-upstream origin $BRANCH
 
-          echo "Switch back to main branch"
+          echo "Return to main"
           git checkout main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Update to step 1
-      - name: Update to Step 1
+      - name: Update to step 1
         uses: skills/action-update-step@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 0
           to_step: 1
-          branch_name: update-intro-to-discussions
+          branch_name: update-step-1
+
