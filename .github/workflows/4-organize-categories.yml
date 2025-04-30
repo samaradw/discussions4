@@ -1,14 +1,13 @@
-name: Step 5, Organize with Categories
+name: Step 4 - Organize with Categories
 
-# This step triggers when a discussion is edited (e.g., category changed).
-# This workflow updates from step 5 to step 6.
-
+# This workflow triggers when a discussion is edited (e.g., category changed).
 on:
   discussion:
     types: [edited]
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   get_current_step:
@@ -23,23 +22,38 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
-  on_category_edit:
-    name: Proceed to Finish
+  proceed_to_finish:
+    name: Move to Finish
     needs: get_current_step
-
-    # Only run this if we are on step 5
     if: >-
-      ${{ needs.get_current_step.outputs.current_step == 5 }}
-
+      ${{ needs.get_current_step.outputs.current_step == '4' }}
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
 
-      - name: Update to finish
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Commit trigger file
+        run: |
+          BRANCH=update-step-finish
+          git checkout -b $BRANCH
+
+          echo "<!-- Step X triggered by category organization -->" >> trigger.log
+
+          git config user.name github-actions[bot]
+          git config user.email github-actions[bot]@users.noreply.github.com
+          git add trigger.log
+          git commit -m "Trigger finish step after discussion categorized"
+          git push --set-upstream origin $BRANCH
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update to Finish
         uses: skills/action-update-step@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 4
           to_step: X
-          branch_name: main
+          branch_name: update-step-finish
