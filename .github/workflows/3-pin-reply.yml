@@ -4,10 +4,58 @@ on:
   discussion_comment:
     types: [created, edited]
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
-  proceed-to-finish:
-    if: github.event.discussion_comment.is_answered == true
+  check_and_proceed_to_step4:
+    name: Move to Step 4
+    if: >-
+      github.event.discussion_comment.is_answered == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get current step
+        id: get_step
+        run: |
+          echo "current_step=$(cat .github/steps/-step.txt)" >> $GITHUB_OUTPUT
+    outputs:
+      current_step: ${{ steps.get_step.outputs.current_step }}
+
+  update_step:
+    name: Update to Step 4
+    needs: check_and_proceed_to_step4
+    if: needs.check_and_proceed_to_step4.outputs.current_step == '3'
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout again for update
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create trigger branch and commit
+        run: |
+          BRANCH=update-step-4
+          git checkout -b $BRANCH
+
+          echo "<!-- Step 4 triggered by answer mark -->" >> trigger.log
+
+          git config user.name github-actions[bot]
+          git config user.email github-actions[bot]@users.noreply.github.com
+          git add trigger.log
+          git commit -m "Trigger step 4 after marking answer"
+          git push --set-upstream origin $BRANCH
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Move to Step 4
-        run: gh-actions-importer move-to-step 4
+        uses: skills/action-update-step@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          from_step: 3
+          to_step: 4
+          branch_name: update-step-4
