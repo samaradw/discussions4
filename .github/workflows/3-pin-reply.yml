@@ -9,5 +9,5 @@ jobs:
     if: github.event.discussion_comment.is_answered == true
     runs-on: ubuntu-latest
     steps:
-      - name: Move to Finish
+      - name: Move to Step 4
         run: gh-actions-importer move-to-step finish
