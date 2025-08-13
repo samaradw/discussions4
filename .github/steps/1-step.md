@@ -1,23 +1,29 @@
 ## Step 1: Create a Discussion
 
-Discussions are a great way to share updates, ask questions, or document decisions with your team. In this step, you'll create a GitHub Discussion to serve as the foundation for practicing pinning.
+Discussions are a great way to share updates, ask questions, or collect feedback from your team. In this step, you'll create a GitHub Discussion to serve as the foundation for practicing pinning.
 
-### Why this matters
+### Why it matters
 
 Creating a Discussion gives your team a shared space to communicate asynchronously and transparently. Pinning starts with creating something worth highlighting.
 
 ### ⌨️ Activity: Create a New Discussion
 
-1. Go to the **Discussions** tab in your newly created repository.
+1. In the top navigation, select the **Discussions** tab.
 
-2. Click **New Discussion**.
+1. Click the **New discussion** button.
 
-3. Use this title: `Skill Practice: Pinning Discussions`
+1. Choose the **General** category.
 
-4. Choose a category like **General** (or whatever is available).
+1. Enter the below this title and body.
 
-5. Add a short message, such as:
+   ```md
+   Skill Practice: Pinning Discussions
+   ```
 
-   > Practicing how to create and pin GitHub Discussions!
+   ```md
+   Practicing how to create and pin GitHub Discussions!
+   ```
 
-6. Wait about 20 seconds then refresh this page (the one you're following instructions from) to automatically update to the next step.
+1. At the bottom, click the **Start discussion** button.
+
+1. With the new discussion created, give Mona a moment to check your work and share the next steps.

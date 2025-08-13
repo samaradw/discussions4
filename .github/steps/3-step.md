@@ -1,16 +1,17 @@
-## Step 3: Pin a reply in a Discussion
+## Step 3: Mark a reply as the answer
 
-You’ve pinned the whole thread—great! Now let’s spotlight a specific comment that adds value to the conversation. 📍
+You’ve pinned the whole thread—great! Now let’s spotlight a specific comment from the conversation.
 
-### Why this matters
+### Why it matters
 
 Replies often contain solutions or clarifications. Marking a reply as the answer pins it, making it easier for others to find helpful content quickly.
 
-### ⌨️ Activity: Pin a reply in your Discussion
+### ⌨️ Activity: Mark a reply as the answer
 
 1. Scroll through the replies in your Discussion.
+
 2. Find the reply that’s the most helpful.
 
 3. Click the **checkmark icon** next to it to **Mark as answer.**
 
-4. Wait about 20 seconds then refresh this page (the one you're following instructions from) to automatically update to the next step.
+4. With a reply marked now marked as an answer, give Mona a moment to check your work and share the next steps

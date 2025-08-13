@@ -1,17 +1,17 @@
 ## Step 2: Pin a Discussion thread
 
-Now that you’ve created a Discussion, it’s time to highlight it by pinning it to the top of your Discussions tab. 📌
+Now that you’ve created a Discussion, it’s time to highlight it by pinning it to the top of the Discussions area. 📌
 
-### Why this matters
+### Why it matters
 
-Pinning helps ensure that high-value Discussions—like announcements or key decisions—stay visible to all contributors.
+Pinning helps ensure that high-value Discussions like announcements or key decisions stay visible to all visitors.
 
 #### ⌨️ Activity: Pin your Discussion
 
-1. Open your Discussion titled `Skill Practice: Pinning Discussions`.
+1. Open the recently created Discussion.
 
-2. Click the **three-dot menu (⋯)** in the top-right corner of the post.
+1. In the top right, click the **three-dot menu (⋯)**.
 
-3. Select **Pin**.
+1. Select the **Pin** option.
 
-4. Wait about 20 seconds then refresh this page (the one you're following instructions from) to automatically update to the next step.
+1. With the discussion pinned, give Mona a moment to check your work and share the next steps.
