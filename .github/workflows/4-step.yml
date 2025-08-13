@@ -1,59 +1,69 @@
-name: Step 4 - Organize with Categories
+name: Step 4
 
-# This workflow triggers when a discussion is edited (e.g., category changed).
 on:
   discussion:
     types: [edited]
 
 permissions:
   contents: write
-  pull-requests: write
+  actions: write
+  issues: write
+
+env:
+  REVIEW_FILE: ".github/steps/x-review.md"
 
 jobs:
-  get_current_step:
-    name: Check current step number
+  find_exercise:
+    name: Find Exercise Issue
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.5.0
+
+  # check_step_work:
+  # Category is changed to "Ideas"
+
+  post_review_content:
+    name: Post review content
+    needs: [find_exercise]
     runs-on: ubuntu-latest
+    if: |
+      !github.event.repository.is_template
+    env:
+      ISSUE_REPOSITORY: ${{ github.repository }}
+      ISSUE_NUMBER: ${{ needs.find_exercise.outputs.issue-number }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - id: get_step
-        run: |
-          echo "current_step=$(cat .github/steps/-step.txt)" >> $GITHUB_OUTPUT
-    outputs:
-      current_step: ${{ steps.get_step.outputs.current_step }}
 
-  proceed_to_finish:
-    name: Move to Finish
-    needs: get_current_step
-    if: >-
-      ${{ needs.get_current_step.outputs.current_step == '4' }}
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
+      - name: Get response templates
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.7.0
 
-      - name: Commit trigger file
-        run: |
-          BRANCH=update-step-finish
-          git checkout -b $BRANCH
-
-          echo "<!-- Step X triggered by category organization -->" >> trigger.log
-
-          git config user.name github-actions[bot]
-          git config user.email github-actions[bot]@users.noreply.github.com
-          git add trigger.log
-          git commit -m "Trigger finish step after discussion categorized"
-          git push --set-upstream origin $BRANCH
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Update to Finish
-        uses: skills/action-update-step@v2
+      - name: Create comment - step finished
+        uses: GrantBirki/comment@v2.1.1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 4
-          to_step: X
-          branch_name: update-step-finish
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: exercise-toolkit/markdown-templates/step-feedback/lesson-review.md
+
+      - name: Create comment - add review content
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: ${{ env.REVIEW_FILE }}
+
+      - name: Disable current workflow
+        run: gh workflow disable "${{github.workflow}}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  finish_exercise:
+    name: Finish Exercise
+    needs: [find_exercise, post_review_content]
+    uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.7.0
+    with:
+      issue-url: ${{ needs.find_exercise.outputs.issue-url }}
+      exercise-title: "Intro to Discussions"

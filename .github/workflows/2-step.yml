@@ -1,4 +1,4 @@
-name: Step 2 - Detect Discussion Pinning
+name: Step 2
 
 on:
   discussion:
@@ -6,46 +6,65 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
+  actions: write
+  issues: write
+
+env:
+  STEP_3_FILE: ".github/steps/3-step.md"
 
 jobs:
-  check_and_proceed_to_step3:
-    name: Move to Step 3
-    if: >-
-      github.event.discussion.pinned == true
+  find_exercise:
+    name: Find Exercise Issue
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.7.0
+  
+  # check_step_work:
+  # github.event.discussion.pinned == true
+
+  post_next_step_content:
+    name: Post next step content
+    needs: [find_exercise]
     runs-on: ubuntu-latest
+    env:
+      ISSUE_REPOSITORY: ${{ github.repository }}
+      ISSUE_NUMBER: ${{ needs.find_exercise.outputs.issue-number }}
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Get current step
-        id: get_step
-        run: |
-          echo "current_step=$(cat .github/steps/-step.txt)" >> $GITHUB_OUTPUT
-
-      - name: Create branch and commit (trigger step)
-        if: steps.get_step.outputs.current_step == '2'
-        run: |
-          BRANCH=update-step-3
-          git checkout -b $BRANCH
-
-          # Add a file or log as a trigger (optional)
-          echo "<!-- Step 3 triggered -->" >> trigger.log
-
-          git config user.name github-actions[bot]
-          git config user.email github-actions[bot]@users.noreply.github.com
-          git add trigger.log
-          git commit -m "Trigger step 3 after pinning a discussion"
-          git push --set-upstream origin $BRANCH
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Update to step 3
-        if: steps.get_step.outputs.current_step == '2'
-        uses: skills/action-update-step@v2
+      - name: Get response templates
+        uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 2
-          to_step: 3
-          branch_name: update-step-3
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.7.0
+
+      - name: Create comment - step finished
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: exercise-toolkit/markdown-templates/step-feedback/step-finished-prepare-next-step.md
+          vars: |
+            next_step_number: 3
+
+      - name: Create comment - add step content
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: ${{ env.STEP_3_FILE }}
+
+      - name: Create comment - watching for progress
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
+
+      - name: Disable current workflow and enable next one
+        run: |
+          gh workflow disable "${{github.workflow}}"
+          gh workflow enable "Step 3"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

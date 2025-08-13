@@ -1,4 +1,4 @@
-name: Step 1 - Detect Discussion Creation
+name: Step 1
 
 on:
   discussion:
@@ -6,47 +6,65 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
+  actions: write
+  issues: write
+
+env:
+  STEP_2_FILE: ".github/steps/2-step.md"
 
 jobs:
-  check_step_and_advance:
-    name: Move to Step 2
-    if: >-
-      github.event.discussion.title != ''
+  find_exercise:
+    name: Find Exercise Issue
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.7.0
+
+  # check_step_work:
+  # github.event.discussion.title != ''
+
+  post_next_step_content:
+    name: Post next step content
+    needs: [find_exercise]
     runs-on: ubuntu-latest
+    env:
+      ISSUE_REPOSITORY: ${{ github.repository }}
+      ISSUE_NUMBER: ${{ needs.find_exercise.outputs.issue-number }}
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Get current step
-        id: get_step
-        run: |
-          echo "current_step=$(cat .github/steps/-step.txt)" >> $GITHUB_OUTPUT
-
-      - name: Create branch and commit (trigger step)
-        if: steps.get_step.outputs.current_step == '1'
-        run: |
-          BRANCH=update-step-2
-          git checkout -b $BRANCH
-
-          # You can modify any file if needed, this is just a placeholder
-          echo "<!-- Step 2 triggered -->" >> trigger.log
-          
-          git config user.name github-actions[bot]
-          git config user.email github-actions[bot]@users.noreply.github.com
-          git add trigger.log
-          git commit -m "Trigger step 2 after discussion created"
-          git push --set-upstream origin $BRANCH
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Update to step 2
-        if: steps.get_step.outputs.current_step == '1'
-        uses: skills/action-update-step@v2
+      - name: Get response templates
+        uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 1
-          to_step: 2
-          branch_name: update-step-2
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.7.0
 
+      - name: Create comment - step finished
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: exercise-toolkit/markdown-templates/step-feedback/step-finished-prepare-next-step.md
+          vars: |
+            next_step_number: 2
+
+      - name: Create comment - add step content
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: ${{ env.STEP_2_FILE }}
+
+      - name: Create comment - watching for progress
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
+
+      - name: Disable current workflow and enable next one
+        run: |
+          gh workflow disable "${{github.workflow}}"
+          gh workflow enable "Step 2"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

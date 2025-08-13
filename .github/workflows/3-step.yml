@@ -1,61 +1,70 @@
-name: Step 3 - Detect Answer Pinning
+name: Step 3
 
 on:
   discussion_comment:
-    types: [created, edited]
+    types: [edited]
 
 permissions:
   contents: write
-  pull-requests: write
+  actions: write
+  issues: write
+
+env:
+  STEP_4_FILE: ".github/steps/4-step.md"
 
 jobs:
-  check_and_proceed_to_step4:
-    name: Move to Step 4
-    if: >-
-      github.event.discussion_comment.is_answered == true
+  find_exercise:
+    name: Find Exercise Issue
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.7.0
+
+  # check_step_work:
+  # github.event.discussion_comment.is_answered == true
+
+  post_next_step_content:
+    name: Post next step content
+    needs: [find_exercise]
     runs-on: ubuntu-latest
+    env:
+      ISSUE_REPOSITORY: ${{ github.repository }}
+      ISSUE_NUMBER: ${{ needs.find_exercise.outputs.issue-number }}
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Get current step
-        id: get_step
-        run: |
-          echo "current_step=$(cat .github/steps/-step.txt)" >> $GITHUB_OUTPUT
-    outputs:
-      current_step: ${{ steps.get_step.outputs.current_step }}
-
-  update_step:
-    name: Update to Step 4
-    needs: check_and_proceed_to_step4
-    if: needs.check_and_proceed_to_step4.outputs.current_step == '3'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout again for update
+      - name: Get response templates
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.7.0
 
-      - name: Create trigger branch and commit
+      - name: Create comment - step finished
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: exercise-toolkit/markdown-templates/step-feedback/step-finished-prepare-next-step.md
+          vars: |
+            next_step_number: 4
+
+      - name: Create comment - add step content
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: ${{ env.STEP_4_FILE }}
+
+      - name: Create comment - watching for progress
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
+
+      - name: Disable current workflow and enable next one
         run: |
-          BRANCH=update-step-4
-          git checkout -b $BRANCH
-
-          echo "<!-- Step 4 triggered by answer mark -->" >> trigger.log
-
-          git config user.name github-actions[bot]
-          git config user.email github-actions[bot]@users.noreply.github.com
-          git add trigger.log
-          git commit -m "Trigger step 4 after marking answer"
-          git push --set-upstream origin $BRANCH
+          gh workflow disable "${{github.workflow}}"
+          gh workflow enable "Step 4"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Move to Step 4
-        uses: skills/action-update-step@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 3
-          to_step: 4
-          branch_name: update-step-4
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
