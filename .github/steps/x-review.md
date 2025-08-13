@@ -1,15 +1,11 @@
-<!--
-  <<< Author notes: Finish >>>
-  Review what we learned, ask for feedback, provide next steps.
--->
-
-## Finish
+## Review
 
 _Congratulations on completing this course on an introduction to Discussions!_
 
-<img src=https://octodex.github.com/images/benevocats.jpg alt=celebrate width=300 align=right>
+<img src="https://octodex.github.com/images/benevocats.jpg" alt="celebrate" width="300" align="right">
 
 By mastering GitHub Discussions, you’ve learned how to:
+
 - Enable Discussions on a repository
 - Start and participate in meaningful threads
 - Organize conversations with custom categories
